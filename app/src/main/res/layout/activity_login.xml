@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".ui.login.LoginActivity">
+
+    <ProgressBar
+        android:id="@+id/progressBarLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/errorTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textColor="@color/red_error"
+        android:textSize="@dimen/text_14sp"
+        android:visibility="gone"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/emailCardView"
+        app:layout_constraintEnd_toEndOf="@+id/emailCardView"
+        app:layout_constraintStart_toStartOf="@+id/emailCardView"
+        tools:text="@string/correo_o_contrase_a_incorrectos" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageView"
+        android:layout_width="@dimen/size_100"
+        android:layout_height="@dimen/size_100"
+        android:src="@drawable/firstlogo"
+        app:layout_constraintBottom_toTopOf="@+id/emailCardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/emailCardView"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/size_80"
+        android:layout_marginStart="@dimen/spacing_50dp"
+        android:layout_marginEnd="@dimen/spacing_50dp"
+        android:layout_marginBottom="@dimen/spacing_95dp"
+        android:background="@drawable/cardview_normal"
+        app:cardCornerRadius="@dimen/radius_20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/email_address"
+            android:textColor="@color/gray_for_text"
+            android:textSize="@dimen/text_15sp"
+            android:layout_marginStart="@dimen/spacing_30dp"
+            android:layout_marginTop="@dimen/spacing_15dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/emailInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_40dp"
+            android:layout_marginStart="@dimen/spacing_30dp"
+            android:layout_marginEnd="@dimen/spacing_30dp"
+            app:boxBackgroundMode="none"
+            app:errorEnabled="true"
+            app:hintEnabled="false">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/emailEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:drawableStart="@drawable/firstemail"
+                android:drawablePadding="@dimen/spacing_10dp"
+                android:hint="@string/username_gmail_com"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_15sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/passwordCardView"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/size_80"
+        android:layout_marginStart="@dimen/spacing_50dp"
+        android:layout_marginEnd="@dimen/spacing_50dp"
+        android:layout_marginTop="@dimen/spacing_95dp"
+        android:background="@drawable/cardview_normal"
+        app:cardCornerRadius="@dimen/radius_20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/password"
+            android:textColor="@color/gray_for_text"
+            android:textSize="@dimen/text_15sp"
+            android:layout_marginStart="@dimen/spacing_30dp"
+            android:layout_marginTop="@dimen/spacing_15dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_35dp"
+            android:layout_marginStart="@dimen/spacing_30dp"
+            android:layout_marginEnd="@dimen/spacing_30dp"
+            app:boxBackgroundMode="none"
+            app:errorEnabled="true"
+            app:hintEnabled="false"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@null"
+            app:passwordToggleDrawable="@drawable/togglepass_selector">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/passwordEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:hint="@string/hidden_password"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_15sp"
+                android:layout_marginBottom="@dimen/spacing_13dp"
+                android:drawableStart="@drawable/firstlockin"
+                android:drawablePadding="@dimen/spacing_10dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/loginBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_50dp"
+        android:layout_marginEnd="@dimen/spacing_50dp"
+        android:layout_marginTop="@dimen/spacing_20dp"
+        android:enabled="false"
+        android:text="@string/login"
+        android:textAllCaps="false"
+        android:background="@drawable/oval_button_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordCardView" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/signUpIntent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_15dp"
+        android:clickable="true"
+        android:text="@string/sign_up"
+        android:textColor="@color/gray_for_text"
+        app:layout_constraintStart_toStartOf="@+id/loginBtn"
+        app:layout_constraintTop_toBottomOf="@+id/loginBtn" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/forgotPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:text="@string/forgot_password"
+        android:layout_marginTop="@dimen/spacing_15dp"
+        android:textColor="@color/gray_for_text"
+        app:layout_constraintEnd_toEndOf="@+id/loginBtn"
+        app:layout_constraintTop_toBottomOf="@+id/loginBtn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

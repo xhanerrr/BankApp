@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/home"
+        android:title="" />
+
+    <item
+        android:id="@+id/accountsFragment"
+        android:icon="@drawable/transactions"
+        android:title="" />
+
+    <item
+        android:id="@+id/action_add_transaction"
+        android:icon="@drawable/create"
+        android:title="" />
+
+    <item
+        android:id="@+id/financesFragment"
+        android:icon="@drawable/dollar"
+        android:title="" />
+
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/profile"
+        android:title="" />
+</menu>
